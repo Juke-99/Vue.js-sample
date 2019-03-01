@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>declarative rendering2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+
+  <body>
+    <div id="app-2">
+      <span v-bind:title="message">
+        Vue is Component oriented.
+      </span>
+    </div>
+
+    <script>
+      var app2 = new Vue({
+        el: '#app-2',
+        data: {
+          message: 'use v-bind to ' + new Date().toLocaleString()
+        }
+      })
+    </script>
+  </body>
+</html>

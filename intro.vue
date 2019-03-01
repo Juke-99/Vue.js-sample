@@ -26,6 +26,22 @@
 			<span v-if="unseen">fu*k</span>
 		</div>
 
+		<div id="app4">
+			<ol>
+				<li v-for="todo in todos">{{ todo.text }}</li>
+			</ol>
+		</div>
+
+		<div id="app5">
+			<p>{{ message }}</p>
+			<button v-on:click="reverseMessage">Reverse</button>
+		</div>
+
+		<div id="app6">
+			<p>{{ message }}</p>
+			<input v-model="message">
+		</div>
+
 		<script>
 			var app = new Vue({
 				el: '#app',
@@ -47,6 +63,36 @@
 				data: {
 					seen: true,
 					unseen: false
+				}
+			})
+
+			var app4 = new Vue({
+				el: '#app4',
+				data: {
+					todos: [
+						{ text: 'JavaScript' },
+						{ text: 'Vue.js' },
+						{ text: 'React.js' }
+					]
+				}
+			})
+
+			var app5 = new Vue({
+				el: '#app5',
+				data: {
+					message: 'Reverse Message'
+				},
+				methods: {
+					reverseMessage() {
+						this.message = this.message.split('').reverse().join('')
+					}
+				}
+			})
+
+			var app6 = new Vue({
+				el: '#app6',
+				data: {
+					message: 'Vue.js'
 				}
 			})
 		</script>
