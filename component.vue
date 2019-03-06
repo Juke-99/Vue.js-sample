@@ -11,22 +11,22 @@
     <body>
         <div id="app7">
             <ol>
-                <BookList 
+                <book-list 
                     v-for="item in bookList"
                     v-bind:books="item"
                     v-bind:key="item.id">
-                </BookList>
+                </book-list>
             </ol>
         </div>
 
         <script>
             // Vue.component('todo-item', {
-            //     templete: '<li>todo1</li>'
+            //     template: '<li>todo1</li>'
             // })
 
-            Vue.component('BookList', {
+            Vue.component('book-list', {
                 props: ['books'],
-                templete: '<li>{{ books.name }}</li>'
+                template: '<li>{{ books.name }}</li>'
             })
 
             var app7 = new Vue({
